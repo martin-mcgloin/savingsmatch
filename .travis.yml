@@ -3,5 +3,8 @@ jdk:
   - oraclejdk7
 deploy:
   provider: heroku
-  app:savingsmatch
-  api_key:46686009-c327-4773-8a29-14474eca21b3
+  api_key:
+    secure: fozTdn36Whq5MevDsq6LzvsmP/eCtFlK2xpJkoopq3erO87oa5vn7CQUTKJ31t5Emjulgj1F3VzEjlmus+ISDKFDh7nWB9iG2FcUOUiiZ5BUQWtkEd85PdbIAXt1KHUU3lxwkO8eoLZlentd6YtcX6biLnQiS2leFcnM/vHZQYM=
+  app: savingsmatch
+  on:
+    repo: martin-mcgloin/savingsmatch
