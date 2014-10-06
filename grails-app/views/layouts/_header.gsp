@@ -1,20 +1,21 @@
 <!-- top header -->
 <header class="header header-fixed navbar bg-white">
-	<div class="brand">
+	<div class="nav-justified brand">
 		<a href="javascript:;" class="fa fa-bars off-left visible-xs" data-toggle="off-canvas" data-move="ltr"></a>
-		<g:link controller="landing" class="navbar-brand">
-			<i class="fa fa-line-chart mg-r-sm"></i>
+		<g:link controller="home" class="navbar-brand">
+			<asset:image src="cropped-SM1.png" class="header-image" width="409" height="57" alt=""/>
 			<span class="heading-font">
-				Savings Match
 			</span>
 		</g:link>
 	</div>
 	<ul class="nav navbar-nav navbar-right off-right">
-		<li class="hidden-xs">
-			<a href="javascript:;">
-				Hi ${user?.profile?.firstName}!
-			</a>
-		</li>
+		<sec:ifLoggedIn>
+			<li class="hidden-xs">
+				<a href="javascript:;">
+					Hi ${user?.profile?.firstName}!
+				</a>
+			</li>
+		</sec:ifLoggedIn>
 		<li class="notifications dropdown hidden-xs">
 			<a href="javascript:;" data-toggle="dropdown">
 				<i class="fa fa-bell"></i>
@@ -81,41 +82,15 @@
 				</div>
 			</div>
 		</li>
-		<li class="quickmenu">
-			<a href="javascript:;" data-toggle="dropdown">
-				<asset:image src="account/avatar.jpg" class="avatar pull-left img-circle" alt="user" title="user" />
-				<i class="caret mg-l-xs hidden-xs no-margin"></i>
-			</a>
-			<ul class="dropdown-menu dropdown-menu-right mg-r-xs">
-				<li>
-					<a href="javascript:;">
-						<div class="pd-t-sm">
-							<sec:username/>
-							<br>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">Settings</a>
-				</li>
-				<li>
-					<a href="javascript:;">Notifications
-						<div class="badge bg-danger pull-right">3</div>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">Help ?</a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<sec:ifNotLoggedIn>
-						<a href="/login">Login</a>
-					</sec:ifNotLoggedIn>
-					<sec:ifLoggedIn>
-						<a href="/j_spring_security_logout">Logout</a>
-					</sec:ifLoggedIn>
-				</li>
-			</ul>
+		<li class="hidden-xs">
+			<g:link controller="home" action="about">
+				About
+			</g:link>
+		</li>
+		<li class="hidden-xs">
+			<g:link controller="home" action="contact">
+				Contact
+			</g:link>
 		</li>
 	</ul>
 </header>

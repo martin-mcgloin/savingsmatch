@@ -5,7 +5,8 @@ class Campaign {
 	String name
 	String description
 	String location
-	URL vimeo_url
+	String vimeo_url
+	String image
 	Date start
 	Date end
 	BigDecimal goal
@@ -17,6 +18,8 @@ class Campaign {
 		name(blank:false)
 		description(blank: false)
 		location(blank:false)
+		start(nullable: true)
+		end(nullable: true)
 
     }
 
