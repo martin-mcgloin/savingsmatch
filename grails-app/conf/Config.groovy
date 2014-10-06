@@ -13,6 +13,8 @@
 
 grails.project.groupId = "org.savingsmatch" // change this to alter the default package name and Maven publishing destination
 
+grails.app.context = "/"
+
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
 grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
 grails.mime.types = [
@@ -114,11 +116,16 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
+grails.assets.less.compile = 'less4j'
+grails.assets.plugin."twitter-bootstrap".excludes = ["**/*.less"]
+grails.assets.plugin."twitter-bootstrap".includes = ["bootstrap.less"]
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'org.savingsmatch.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'org.savingsmatch.UserRole'
 grails.plugin.springsecurity.authority.className = 'org.savingsmatch.Role'
+grails.plugin.springsecurity.rejectIfNoRule = true
+grails.plugin.springsecurity.fii.rejectPublicInvocations = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
@@ -127,6 +134,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll']
+	'/**/favicon.ico':                ['permitAll'],
+	'/**':                            ['permitAll']
 ]
 
