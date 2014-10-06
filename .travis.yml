@@ -2,7 +2,6 @@ language: groovy
 jdk:
   - oraclejdk7
 deploy:
-provider: heroku
-app:
-master:savingsmatch
-api_key:46686009-c327-4773-8a29-14474eca21b3
+  provider: heroku
+  app:savingsmatch
+  api_key:46686009-c327-4773-8a29-14474eca21b3
