@@ -2,7 +2,7 @@ language: groovy
 jdk:
   - oraclejdk7
 script: ./grailsw refresh-dependencies
-	&& ./grailsw test-app
+  && ./grailsw test-app
 deploy:
   provider: heroku
   api_key:
